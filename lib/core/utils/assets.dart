@@ -10,6 +10,10 @@ class Assets {
   /// assets/images/apple_icon.svg
   static const String imagesAppleIcon = "assets/images/apple_icon.svg";
 
+  /// Assets for imagesCheckIcon
+  /// assets/images/check_icon.svg
+  static const String imagesCheckIcon = "assets/images/check_icon.svg";
+
   /// Assets for imagesFacebookIcon
   /// assets/images/facebook_icon.svg
   static const String imagesFacebookIcon = "assets/images/facebook_icon.svg";
@@ -45,7 +49,5 @@ class Assets {
   /// Assets for imagesSplashTop
   /// assets/images/splash_top.svg
   static const String imagesSplashTop = "assets/images/splash_top.svg";
-
-  static var images;
 }
 
