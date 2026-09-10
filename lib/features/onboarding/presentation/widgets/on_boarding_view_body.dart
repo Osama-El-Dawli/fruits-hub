@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/services/shared_prefrences.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
-import 'package:fruits_hub/features/auth/presentation/views/login_view.dart';
+import 'package:fruits_hub/features/auth/presentation/views/sign_in_view.dart';
 import 'package:fruits_hub/features/onboarding/presentation/widgets/on_boarding_page_view.dart';
 
 class OnBoardingViewBody extends StatefulWidget {
@@ -64,7 +64,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             child: CustomButton(
               onPressed: () {
                 Prefs.setBool('isOnBoardingSeen', true);
-                Navigator.pushReplacementNamed(context, LoginView.routeName);
+                Navigator.pushReplacementNamed(context, SignInView.routeName);
               },
               text: 'ابدأ الان',
             ),

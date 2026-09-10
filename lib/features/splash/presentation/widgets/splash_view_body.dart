@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruits_hub/core/services/shared_prefrences.dart';
 import 'package:fruits_hub/core/utils/assets.dart';
-import 'package:fruits_hub/features/auth/presentation/views/login_view.dart';
+import 'package:fruits_hub/features/auth/presentation/views/sign_in_view.dart';
 import 'package:fruits_hub/features/onboarding/presentation/views/on_boarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -24,7 +24,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       if (mounted) {
         bool isOnBoardingSeen = Prefs.getBool('isOnBoardingSeen');
         if (isOnBoardingSeen) {
-          Navigator.pushReplacementNamed(context, LoginView.routeName);
+          Navigator.pushReplacementNamed(context, SignInView.routeName);
           return;
         } else {
           Navigator.pushReplacementNamed(context, OnBoardingView.routeName);

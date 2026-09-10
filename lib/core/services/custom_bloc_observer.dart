@@ -19,4 +19,12 @@ class CustomBlocObserver extends BlocObserver {
       log('${bloc.runtimeType} $transition');
     }
   }
+
+  @override
+  void onCreate(BlocBase bloc) {
+    super.onCreate(bloc);
+    if (kDebugMode) {
+      log('${bloc.runtimeType}');
+    }
+  }
 }
