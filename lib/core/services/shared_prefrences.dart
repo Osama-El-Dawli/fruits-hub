@@ -6,11 +6,11 @@ class Prefs {
     _instance = await SharedPreferences.getInstance();
   }
 
-  static setBool(String key, bool value) {
+  static void setBool(String key, bool value) {
     _instance.setBool(key, value);
   }
 
-  static getBool(String key) {
+  static bool getBool(String key) {
     return _instance.getBool(key) ?? false;
   }
 }
