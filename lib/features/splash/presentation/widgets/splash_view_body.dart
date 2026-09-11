@@ -43,7 +43,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
           alignment: Alignment.topLeft,
           child: SvgPicture.asset(Assets.imagesSplashTop),
         ),
-        SvgPicture.asset(Assets.imagesLogo),
+        Center(child: SvgPicture.asset(Assets.imagesLogo)),
         SvgPicture.asset(Assets.imagesSplashBottom, fit: BoxFit.fill),
       ],
     );
