@@ -34,7 +34,7 @@ class AuthRepoImplementation extends AuthRepo {
         password: password,
       );
       var userEntity = UserModel(email: email, name: name, uid: user.uid);
-      await addUserData(user: userEntity);
+      await addUserData(user: userEntity, uid: user.uid);
       return right(userEntity);
     } on CustomException catch (e) {
       log(
@@ -61,12 +61,14 @@ class AuthRepoImplementation extends AuthRepo {
     String password,
   ) async {
     try {
-      User user = await _firebaseAuthService.loginWithEmailAndPassword(
+      var user = await _firebaseAuthService.loginWithEmailAndPassword(
         email: email,
         password: password,
       );
 
-      return right(UserModel.fromFirebaseUser(user));
+      var userEntity = await getUserData(uid: user.uid);
+
+      return right(userEntity);
     } on CustomException catch (e) {
       log(
         'Exception in AuthRepoImplementation.loginWithEmailAndPassword: ${e.toString()}',
@@ -81,20 +83,20 @@ class AuthRepoImplementation extends AuthRepo {
   }
 
   @override
-  Future<void> addUserData({required UserEntity user}) async {
-    await _databaseService.addData(
-      path: BackEndEndPoints.addUserData,
-      data: user.toMap(),
-    );
-  }
-
-  @override
   Future<Either<ServerFailure, UserEntity>> signInWithGoogle() async {
     User? user;
     try {
       user = await _firebaseAuthService.signInWithGoogle();
       var userEntity = UserModel.fromFirebaseUser(user);
-      await addUserData(user: userEntity);
+      bool isUserExists = await _databaseService.checkIfDataExists(
+        path: BackEndEndPoints.isUserExists,
+        id: user.uid,
+      );
+      if (isUserExists) {
+        await getUserData(uid: user.uid);
+      } else {
+        await addUserData(user: userEntity, uid: user.uid);
+      }
       return right(userEntity);
     } catch (e) {
       log(
@@ -119,5 +121,26 @@ class AuthRepoImplementation extends AuthRepo {
       );
       return left(ServerFailure(e.toString()));
     }
+  }
+
+  @override
+  Future<void> addUserData({
+    required UserEntity user,
+    required String uid,
+  }) async {
+    await _databaseService.addData(
+      path: BackEndEndPoints.addUserData,
+      data: user.toMap(),
+      id: uid,
+    );
+  }
+
+  @override
+  Future<UserEntity> getUserData({required String uid}) async {
+    var userData = await _databaseService.getData(
+      path: BackEndEndPoints.getUserData,
+      id: uid,
+    );
+    return UserModel.fromJson(userData);
   }
 }
