@@ -8,4 +8,12 @@ class UserEntity {
     required this.email,
     required this.uid,
   });
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'name': name,
+      'email': email,
+      'uid': uid,
+    };
+  }
 }

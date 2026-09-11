@@ -98,6 +98,10 @@ class FirebaseAuthService {
     }
   }
 
+  Future<void> deleteUser(User user) async {
+    await user.delete();
+  }
+
   Future<User> signInWithGoogle() async {
     await GoogleSignIn.instance.initialize(
       serverClientId:
