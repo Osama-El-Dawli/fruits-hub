@@ -86,7 +86,9 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                   SocialLoginButton(
                     title: 'تسجيل بواسطة جوجل',
                     image: Assets.imagesGoogleIcon,
-                    onPressed: () {},
+                    onPressed: () {
+                      context.read<SigninCubit>().signInWithGoogle();
+                    },
                   ),
                   const SizedBox(height: 16),
                   SocialLoginButton(
@@ -98,7 +100,9 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                   SocialLoginButton(
                     title: 'تسجيل بواسطة فيسبوك',
                     image: Assets.imagesFacebookIcon,
-                    onPressed: () {},
+                    onPressed: () {
+                      context.read<SigninCubit>().signInWithFacebook();
+                    },
                   ),
                 ],
               ),

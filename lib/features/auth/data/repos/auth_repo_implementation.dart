@@ -42,7 +42,10 @@ class AuthRepoImplementation extends AuthRepo {
   }
 
   @override
-  Future<Either<ServerFailure, UserEntity>> loginWithEmailAndPassword(String email, String password) async {
+  Future<Either<ServerFailure, UserEntity>> loginWithEmailAndPassword(
+    String email,
+    String password,
+  ) async {
     try {
       User user = await _firebaseAuthService.loginWithEmailAndPassword(
         email: email,
@@ -58,6 +61,34 @@ class AuthRepoImplementation extends AuthRepo {
     } catch (e) {
       log(
         'Unexpected error in AuthRepoImplementation.loginWithEmailAndPassword: ${e.toString()}',
+      );
+      return left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<ServerFailure, UserEntity>> signInWithGoogle() async {
+    try {
+      User user = await _firebaseAuthService.signInWithGoogle();
+
+      return right(UserModel.fromFirebaseUser(user));
+    } catch (e) {
+      log(
+        'Unexpected error in AuthRepoImplementation.signInWithGoogle: ${e.toString()}',
+      );
+      return left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<ServerFailure, UserEntity>> signInWithFacebook() async {
+    try {
+      User user = await _firebaseAuthService.signInWithFacebook();
+
+      return right(UserModel.fromFirebaseUser(user));
+    } catch (e) {
+      log(
+        'Unexpected error in AuthRepoImplementation.signInWithFacebook: ${e.toString()}',
       );
       return left(ServerFailure(e.toString()));
     }
