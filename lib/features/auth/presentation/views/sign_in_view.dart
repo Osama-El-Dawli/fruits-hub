@@ -7,6 +7,7 @@ import 'package:fruits_hub/core/widgets/custom_loading_progress_hud.dart';
 import 'package:fruits_hub/features/auth/domain/repos/auth_repo.dart';
 import 'package:fruits_hub/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/sign_in_view_body.dart';
+import 'package:fruits_hub/features/home/presentation/views/home_view.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({super.key});
@@ -31,7 +32,9 @@ class SignInViewBodyBlocConsumer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<SigninCubit, SigninState>(
       listener: (context, state) {
-        if (state is SigninSuccess) {}
+        if (state is SigninSuccess) {
+          Navigator.pushReplacementNamed(context, HomeView.routeName);
+        }
         if (state is SigninFailure) {
           toastMsg(msg: state.message);
         }

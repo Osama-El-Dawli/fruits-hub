@@ -32,6 +32,7 @@ class SignUpViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<SignupCubit, SignupState>(
       listener: (context, state) {
         if (state is SignupSuccess) {
+          toastMsg(msg: 'تم تسجيل الحساب بنجاح');
           Navigator.of(context).pop();
         }
         if (state is SignupFailure) {
