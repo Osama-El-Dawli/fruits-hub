@@ -26,7 +26,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
         },
         icon: Icon(
           obscureText ? Icons.visibility : Icons.visibility_off,
-          color: Color(0xffC9CECF),
+          color: const Color(0xffC9CECF),
         ),
       ),
     );

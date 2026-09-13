@@ -35,7 +35,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                 TextSpan(
                   text: 'من خلال إنشاء حساب ، فإنك توافق على ',
                   style: AppTextStyles.semiBold13.copyWith(
-                    color: Color(0xff949D9E),
+                    color: const Color(0xff949D9E),
                   ),
                 ),
                 TextSpan(

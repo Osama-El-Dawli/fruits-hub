@@ -14,7 +14,7 @@ class DontHaveAnAccount extends StatelessWidget {
         children: [
           TextSpan(
             text: 'لا تمتلك حساب؟ ',
-            style: AppTextStyles.semiBold16.copyWith(color: Color(0xff949D9E)),
+            style: AppTextStyles.semiBold16.copyWith(color: const Color(0xff949D9E)),
           ),
           TextSpan(
             recognizer: TapGestureRecognizer()..onTap = () => Navigator.pushNamed(

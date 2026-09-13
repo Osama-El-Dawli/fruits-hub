@@ -19,7 +19,7 @@ class SignInView extends StatelessWidget {
       create: (context) => SigninCubit(authRepo: getIt<AuthRepo>()),
       child: Scaffold(
         appBar: buildAppBar(context, 'تسجيل الدخول', showBackArrow: false),
-        body: SignInViewBodyBlocConsumer(),
+        body: const SignInViewBodyBlocConsumer(),
       ),
     );
   }
@@ -42,7 +42,7 @@ class SignInViewBodyBlocConsumer extends StatelessWidget {
       builder: (context, state) {
         return CustomLoadingProgressHud(
           isLoading: state is SigninLoading,
-          child: SignInViewBody(),
+          child: const SignInViewBody(),
         );
       },
     );

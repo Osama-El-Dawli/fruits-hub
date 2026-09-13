@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:fruits_hub/core/widgets/search_text_field.dart';
+import 'package:fruits_hub/features/home/presentation/widgets/best_selling_grid_view.dart';
+import 'package:fruits_hub/features/home/presentation/widgets/best_selling_header.dart';
 import 'package:fruits_hub/features/home/presentation/widgets/custom_home_app_bar.dart';
 import 'package:fruits_hub/features/home/presentation/widgets/featured_list.dart';
 
@@ -8,8 +10,8 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16),
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -21,9 +23,13 @@ class HomeViewBody extends StatelessWidget {
                 SearchTextField(),
                 SizedBox(height: 16),
                 FeaturedList(),
+                SizedBox(height: 12),
+                BestSellingHeader(),
+                SizedBox(height: 8),
               ],
             ),
           ),
+          BestSellingGridView(),
         ],
       ),
     );

@@ -9,8 +9,8 @@ class FeaturedList extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider.builder(
       itemCount: 5,
-      itemBuilder: (context, index, realIndex) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      itemBuilder: (context, index, realIndex) => const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 8.0),
         child: FeaturedItem(),
       ),
       options: CarouselOptions(

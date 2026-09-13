@@ -12,11 +12,11 @@ class CustomHomeAppBar extends StatelessWidget {
       leading: Image.asset(Assets.imagesProfileImage),
       title: Text(
         'صباح الخير !..',
-        style: AppTextStyles.regular16.copyWith(color: Color(0xff949D9E)),
+        style: AppTextStyles.regular16.copyWith(color: const Color(0xff949D9E)),
       ),
-      subtitle: Text('أحمد مصطفي', style: AppTextStyles.bold16),
+      subtitle: const Text('أحمد مصطفي', style: AppTextStyles.bold16),
       trailing: CircleAvatar(
-        backgroundColor: Color(0xffEEF8ED),
+        backgroundColor: const Color(0xffEEF8ED),
         child: SvgPicture.asset(Assets.imagesNotification),
       ),
     );

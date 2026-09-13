@@ -27,11 +27,11 @@ class OnBoardingPageView extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('مرحبًا بك في', style: AppTextStyles.bold23),
+              const Text('مرحبًا بك في', style: AppTextStyles.bold23),
               Text(
                 ' HUB',
                 style: AppTextStyles.bold23.copyWith(
-                  color: AppColors.secondaryColor,
+                  color: AppColors.lighterPrimaryColor,
                 ),
               ),
               Text(
@@ -45,11 +45,11 @@ class OnBoardingPageView extends StatelessWidget {
           subTitle:
               'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
         ),
-        PageViewItem(
+        const PageViewItem(
           isVisible: false,
           image: Assets.imagesPageViewItem2Image,
           backgroundImage: Assets.imagesPageViewItem2Background,
-          title: const Text(
+          title: Text(
             'ابحث وتسوق',
             style: AppTextStyles.bold23,
             textAlign: TextAlign.center,

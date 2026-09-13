@@ -79,9 +79,9 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                     text: 'تسجيل الدخول',
                   ),
                   const SizedBox(height: 33),
-                  DontHaveAnAccount(),
+                  const DontHaveAnAccount(),
                   const SizedBox(height: 33),
-                  OrDivider(),
+                  const OrDivider(),
                   const SizedBox(height: 16),
                   SocialLoginButton(
                     title: 'تسجيل بواسطة جوجل',

@@ -1,0 +1,36 @@
+import 'package:fruits_hub/core/utils/assets.dart';
+
+class BottomNavigationBarEntity {
+  final String activeImage;
+  final String inActiveImage;
+  final String name;
+
+  BottomNavigationBarEntity({
+    required this.activeImage,
+    required this.inActiveImage,
+    required this.name,
+  });
+}
+
+List<BottomNavigationBarEntity> get bottomNavigationBarItems => [
+  BottomNavigationBarEntity(
+    activeImage: Assets.imagesHomeActive,
+    inActiveImage: Assets.imagesHome,
+    name: 'الرئيسية',
+  ),
+  BottomNavigationBarEntity(
+    activeImage: Assets.imagesProductsActive,
+    inActiveImage: Assets.imagesProducts,
+    name: 'المنتجات',
+  ),
+  BottomNavigationBarEntity(
+    activeImage: Assets.imagesShoppingCartActive,
+    inActiveImage: Assets.imagesShoppingCart,
+    name: 'سلة التسوق',
+  ),
+  BottomNavigationBarEntity(
+    activeImage: Assets.imagesUserActive,
+    inActiveImage: Assets.imagesUser,
+    name: 'حسابي',
+  ),
+];

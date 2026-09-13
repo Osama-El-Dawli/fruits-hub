@@ -28,12 +28,12 @@ class SocialLoginButton extends StatelessWidget {
         ),
         onPressed: onPressed,
         child: ListTile(
-          visualDensity: VisualDensity(vertical: VisualDensity.minimumDensity),
+          visualDensity: const VisualDensity(vertical: VisualDensity.minimumDensity),
           leading: SvgPicture.asset(image),
           title: Text(
             title,
             textAlign: TextAlign.center,
-            style: AppTextStyles.semiBold16.copyWith(color: Color(0xff0C0D0D)),
+            style: AppTextStyles.semiBold16.copyWith(color: const Color(0xff0C0D0D)),
           ),
         ),
       ),

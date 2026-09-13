@@ -30,9 +30,9 @@ class FeaturedItem extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(right: 32),
+                padding: const EdgeInsets.only(right: 32),
                 width: itemWidth * 0.5,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: svg.Svg(Assets.imagesFeaturedItemBackground),
                     fit: BoxFit.fill,
@@ -41,21 +41,21 @@ class FeaturedItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 25),
+                    const SizedBox(height: 25),
                     Text(
                       'عروض العيد',
                       style: AppTextStyles.regular13.copyWith(
                         color: Colors.white,
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       'خصم 25%',
                       style: AppTextStyles.bold19.copyWith(color: Colors.white),
                     ),
-                    SizedBox(height: 12),
+                    const SizedBox(height: 12),
                     FeaturedItemButton(onPressed: () {}),
-                    SizedBox(height: 29),
+                    const SizedBox(height: 29),
                   ],
                 ),
               ),

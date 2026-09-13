@@ -19,14 +19,14 @@ AppBar buildAppBar(
               height: 44,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(color: Color(0xffF1F1F5)),
+                border: Border.all(color: const Color(0xffF1F1F5)),
               ),
               child: Center(
                 child: Transform.translate(
                   offset: const Offset(2, 0),
                   child: IconButton(
                     padding: EdgeInsets.zero,
-                    icon: Icon(Icons.arrow_back_ios_new),
+                    icon: const Icon(Icons.arrow_back_ios_new),
                     onPressed: () {
                       Navigator.pop(context);
                     },

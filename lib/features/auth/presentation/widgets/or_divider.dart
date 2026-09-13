@@ -13,7 +13,7 @@ class OrDivider extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 18.0),
           child: Text(
             'أو',
-            style: AppTextStyles.bold16.copyWith(color: Color(0xff0C0D0D)),
+            style: AppTextStyles.bold16.copyWith(color: const Color(0xff0C0D0D)),
           ),
         ),
         const Expanded(child: Divider(color: Color(0xffDDDFDF))),

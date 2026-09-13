@@ -53,7 +53,7 @@ class PageViewItem extends StatelessWidget {
                       child: Text(
                         'تخط',
                         style: AppTextStyles.regular13.copyWith(
-                          color: Color(0xff949D9E),
+                          color: const Color(0xff949D9E),
                         ),
                       ),
                     ),
@@ -70,7 +70,7 @@ class PageViewItem extends StatelessWidget {
             child: Text(
               subTitle,
               style: AppTextStyles.semiBold13.copyWith(
-                color: Color(0xff4E5556),
+                color: const Color(0xff4E5556),
               ),
               textAlign: TextAlign.center,
             ),

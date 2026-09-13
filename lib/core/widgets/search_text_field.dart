@@ -9,7 +9,7 @@ class SearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: Color(0x0A000000),
@@ -23,7 +23,7 @@ class SearchTextField extends StatelessWidget {
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
           hintText: 'ابحث عن.......',
-          hintStyle: AppTextStyles.regular13.copyWith(color: Color(0xff949D9E)),
+          hintStyle: AppTextStyles.regular13.copyWith(color: const Color(0xff949D9E)),
           filled: true,
           fillColor: Colors.white,
           prefixIcon: SizedBox(
