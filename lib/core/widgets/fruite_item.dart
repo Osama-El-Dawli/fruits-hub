@@ -28,7 +28,7 @@ class FruiteItem extends StatelessWidget {
               children: [
                 const SizedBox(height: 20),
                 Image.asset(Assets.imagesWatermelonTest),
-                const SizedBox(height: 24),
+                const SizedBox(height: 20),
                 ListTile(
                   title: Text(
                     'بطيخ',
